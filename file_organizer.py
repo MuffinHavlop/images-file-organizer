@@ -1,16 +1,4 @@
 import os
- 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-
-for root, dirs, files in os.walk(dir_path):
-    for file in files:
-        try:
-            if file.endswith('.jpg'):
-                jpgs()
-            elif file.endswith('.png'):
-                pngs()
-        except FileNotFoundError:
-             quit()
 
 def jpgs():
    destination = f'D:\\Downloadpics\\jpgs\\{str(file)}'
@@ -25,3 +13,16 @@ def pngs():
 def quit():
   print("Complete run")
   exit()
+
+ 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+for root, dirs, files in os.walk(dir_path):
+    for file in files:
+        try:
+            if file.endswith('.jpg'):
+                jpgs()
+            elif file.endswith('.png'):
+                pngs()
+        except FileNotFoundError:
+             quit()
