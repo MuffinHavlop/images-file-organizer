@@ -6,14 +6,22 @@ for root, dirs, files in os.walk(dir_path):
     for file in files:
         try:
             if file.endswith('.jpg'):
-                destination = f'D:\\Downloadpics\\jpgs\\{str(file)}'
-                source = f'D:\\{str(file)}'
-                os.replace(source, destination)
+                jpgs()
             elif file.endswith('.png'):
-                destination = f'D:\\Downloadpics\\pngs\\{str(file)}'
-                source = f'D:\\{str(file)}'
-                os.replace(source, destination)
+                pngs()
         except FileNotFoundError:
-            print("Complete run")
-            exit()
+             quit()
 
+def jpgs():
+   destination = f'D:\\Downloadpics\\jpgs\\{str(file)}'
+   source = f'D:\\{str(file)}'
+   os.replace(source, destination)
+
+def pngs():
+  destination = f'D:\\Downloadpics\\pngs\\{str(file)}'
+  source = f'D:\\{str(file)}'
+  os.replace(source, destination)
+
+def quit():
+  print("Complete run")
+  exit()
